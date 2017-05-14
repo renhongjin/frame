@@ -66,12 +66,12 @@
 	<!-- myBatis文件 -->
 	<bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="typeAliasesPackage" value="com.photo.bean" />
-		<property name="mapperLocations" value="classpath*:com/photo/dao/config/*.xml" />
+		<property name="typeAliasesPackage" value="com.frame.bean" />
+		<property name="mapperLocations" value="classpath*:com/frame/dao/config/*.xml" />
 	</bean>
 
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.photo.dao.mapper" />
+		<property name="basePackage" value="com.frame.dao.mapper" />
 		<property name="sqlSessionFactoryBeanName" value="sessionFactory" />
 	</bean>
 

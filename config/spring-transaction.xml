@@ -19,7 +19,7 @@
 
 	<aop:config proxy-target-class="true">
 		<aop:pointcut id="photoInterceptorPointCuts"
-			expression="execution(* com.photo.service..*.*(..))" />
+			expression="execution(* com.frame.service..*.*(..))" />
 		<aop:advisor advice-ref="transactionAdvice" pointcut-ref="photoInterceptorPointCuts" />
 	</aop:config>
 </beans>

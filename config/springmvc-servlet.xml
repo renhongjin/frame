@@ -16,11 +16,8 @@
         http://www.springframework.org/schema/mvc 
         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">                    
     <!-- scan the package and the sub package -->
-    <context:component-scan base-package="com.photo.web"/>
-    <context:component-scan base-package="service"/>
-    <context:component-scan base-package="dao"/>
-    <context:component-scan base-package="test"/>
-    
+    <context:component-scan base-package="com.frame.service"/>
+    <context:component-scan base-package="com.frame.web"/>
     <!-- if you use annotation you must configure following setting -->
     <!-- <mvc:annotation-driven/> -->
     <mvc:annotation-driven>  
@@ -78,11 +75,12 @@
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/hello/**"/>
-            <bean class="com.photo.interceptor.MyInterceptor"></bean>
+            <bean class="com.frame.interceptor.MyInterceptor"></bean>
         </mvc:interceptor>    
-        <mvc:interceptor>
+        
+        <!-- <mvc:interceptor>
             <mvc:mapping path="/**"/>
-            <bean class="com.photo.interceptor.PermissionInterceptor">
+            <bean class="com.frame.interceptor.PermissionInterceptor">
             	<property name="excludedUrls">
             		<list>
             			<value>/login.html</value>
@@ -91,6 +89,6 @@
             		</list>
             	</property>
             </bean>
-        </mvc:interceptor>    
+        </mvc:interceptor> -->    
     </mvc:interceptors>
 </beans>
