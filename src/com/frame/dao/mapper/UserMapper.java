@@ -1,6 +1,7 @@
 package com.frame.dao.mapper;
 
-import com.frame.bean.User;
+import com.frame.dao.model.User;
+
 public interface UserMapper {
     int deleteByPrimaryKey(String id);
 
