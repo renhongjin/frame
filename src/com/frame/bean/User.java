@@ -1,105 +1,193 @@
 package com.frame.bean;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class User {
-    private String id;
+public class User implements Serializable{
+  
+  /**
+   * 
+   */
+  private static final long serialVersionUID = -6158097583650675282L;
 
-    private String openId;
+  private String id;
 
-    private String nickName;
+  /**
+   * 微信openid
+   */
+  private String openId;
 
-    private Integer gender;
+  /**
+   * 微信昵称
+   */
+  private String nickName;
 
-    private String language;
+  /**
+   * 微信头像地址
+   */
+  private String headUrl;
 
-    private String city;
+  /**
+   * 微信用户性别:1:男
+   */
+  private Integer gender;
 
-    private String province;
+  /**
+   * 语言
+   */
+  private String language;
 
-    private String country;
+  /**
+   * 城市
+   */
+  private String city;
 
-    private Date createTime;
+  /**
+   * 省份
+   */
+  private String province;
 
-    private byte[] headUrl;
+  /**
+   * 国家
+   */
+  private String country;
 
-    public String getId() {
-        return id;
-    }
+  /**
+   * 创建时间
+   */
+  private Date createTime;
 
-    public void setId(String id) {
-        this.id = id;
-    }
+  public String getId() {
+      return id;
+  }
 
-    public String getOpenId() {
-        return openId;
-    }
+  public void setId(String id) {
+      this.id = id == null ? null : id.trim();
+  }
 
-    public void setOpenId(String openId) {
-        this.openId = openId;
-    }
+  /**
+   * 获取微信openid
+   */
+  public String getOpenId() {
+      return openId;
+  }
 
-    public String getNickName() {
-        return nickName;
-    }
+  /**
+   * 设置微信openid
+   */
+  public void setOpenId(String openId) {
+      this.openId = openId == null ? null : openId.trim();
+  }
 
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
-    }
+  /**
+   * 获取微信昵称
+   */
+  public String getNickName() {
+      return nickName;
+  }
 
-    public Integer getGender() {
-        return gender;
-    }
+  /**
+   * 设置微信昵称
+   */
+  public void setNickName(String nickName) {
+      this.nickName = nickName == null ? null : nickName.trim();
+  }
 
-    public void setGender(Integer gender) {
-        this.gender = gender;
-    }
+  /**
+   * 获取微信头像地址
+   */
+  public String getHeadUrl() {
+      return headUrl;
+  }
 
-    public String getLanguage() {
-        return language;
-    }
+  /**
+   * 设置微信头像地址
+   */
+  public void setHeadUrl(String headUrl) {
+      this.headUrl = headUrl == null ? null : headUrl.trim();
+  }
 
-    public void setLanguage(String language) {
-        this.language = language;
-    }
+  /**
+   * 获取微信用户性别:1:男
+   */
+  public Integer getGender() {
+      return gender;
+  }
 
-    public String getCity() {
-        return city;
-    }
+  /**
+   * 设置微信用户性别:1:男
+   */
+  public void setGender(Integer gender) {
+      this.gender = gender;
+  }
 
-    public void setCity(String city) {
-        this.city = city;
-    }
+  /**
+   * 获取语言
+   */
+  public String getLanguage() {
+      return language;
+  }
 
-    public String getProvince() {
-        return province;
-    }
+  /**
+   * 设置语言
+   */
+  public void setLanguage(String language) {
+      this.language = language == null ? null : language.trim();
+  }
 
-    public void setProvince(String province) {
-        this.province = province;
-    }
+  /**
+   * 获取城市
+   */
+  public String getCity() {
+      return city;
+  }
 
-    public String getCountry() {
-        return country;
-    }
+  /**
+   * 设置城市
+   */
+  public void setCity(String city) {
+      this.city = city == null ? null : city.trim();
+  }
 
-    public void setCountry(String country) {
-        this.country = country;
-    }
+  /**
+   * 获取省份
+   */
+  public String getProvince() {
+      return province;
+  }
 
-    public Date getCreateTime() {
-        return createTime;
-    }
+  /**
+   * 设置省份
+   */
+  public void setProvince(String province) {
+      this.province = province == null ? null : province.trim();
+  }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
+  /**
+   * 获取国家
+   */
+  public String getCountry() {
+      return country;
+  }
 
-    public byte[] getHeadUrl() {
-        return headUrl;
-    }
+  /**
+   * 设置国家
+   */
+  public void setCountry(String country) {
+      this.country = country == null ? null : country.trim();
+  }
 
-    public void setHeadUrl(byte[] headUrl) {
-        this.headUrl = headUrl;
-    }
+  /**
+   * 获取创建时间
+   */
+  public Date getCreateTime() {
+      return createTime;
+  }
+
+  /**
+   * 设置创建时间
+   */
+  public void setCreateTime(Date createTime) {
+      this.createTime = createTime;
+  }
 }

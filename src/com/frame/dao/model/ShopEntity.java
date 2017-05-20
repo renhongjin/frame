@@ -5,228 +5,228 @@ import java.util.Date;
 
 public class ShopEntity {
     /**
-     * µêÆÌid
+     * åº—é“ºid
      */
     private String id;
 
     /**
-     * µêÆÌÃû³Æ
+     * åº—é“ºåç§°
      */
     private String name;
 
     /**
-     * Î³¶È
+     * çº¬åº¦
      */
     private BigDecimal latitude;
 
     /**
-     * ¾­¶È
+     * ç»åº¦
      */
     private BigDecimal longitude;
 
     /**
-     * µêÆÌlogo
+     * åº—é“ºlogo
      */
     private String logoUrl;
 
     /**
-     * µêÆÌÃèÊö
+     * åº—é“ºæè¿°
      */
     private String desc;
 
     /**
-     * ÊôÓÚÄÇÖÖÀàĞÍµÄĞ¡³Ô
+     * å±äºé‚£ç§ç±»å‹çš„å°åƒ
      */
     private String type;
 
     /**
-     * µêÆÌµØÖ·
+     * åº—é“ºåœ°å€
      */
     private String address;
 
     /**
-     * ÁªÏµµç»°
+     * è”ç³»ç”µè¯
      */
     private String phone;
 
     /**
-     * ´´½¨Ê±¼ä
+     * åˆ›å»ºæ—¶é—´
      */
     private Date createTime;
 
     /**
-     * 0:Î´É¾³ı£¬1£ºÉ¾³ı
+     * 0:æœªåˆ é™¤ï¼Œ1ï¼šåˆ é™¤
      */
     private Integer logicDelete;
 
     /**
-     * µêÆÌµÄ´´½¨ÓÃ»§
+     * åº—é“ºçš„åˆ›å»ºç”¨æˆ·
      */
     private String createUser;
 
     /**
-     * »ñÈ¡µêÆÌid
+     * è·å–åº—é“ºid
      */
     public String getId() {
         return id;
     }
 
     /**
-     * ÉèÖÃµêÆÌid
+     * è®¾ç½®åº—é“ºid
      */
     public void setId(String id) {
         this.id = id == null ? null : id.trim();
     }
 
     /**
-     * »ñÈ¡µêÆÌÃû³Æ
+     * è·å–åº—é“ºåç§°
      */
     public String getName() {
         return name;
     }
 
     /**
-     * ÉèÖÃµêÆÌÃû³Æ
+     * è®¾ç½®åº—é“ºåç§°
      */
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
     }
 
     /**
-     * »ñÈ¡Î³¶È
+     * è·å–çº¬åº¦
      */
     public BigDecimal getLatitude() {
         return latitude;
     }
 
     /**
-     * ÉèÖÃÎ³¶È
+     * è®¾ç½®çº¬åº¦
      */
     public void setLatitude(BigDecimal latitude) {
         this.latitude = latitude;
     }
 
     /**
-     * »ñÈ¡¾­¶È
+     * è·å–ç»åº¦
      */
     public BigDecimal getLongitude() {
         return longitude;
     }
 
     /**
-     * ÉèÖÃ¾­¶È
+     * è®¾ç½®ç»åº¦
      */
     public void setLongitude(BigDecimal longitude) {
         this.longitude = longitude;
     }
 
     /**
-     * »ñÈ¡µêÆÌlogo
+     * è·å–åº—é“ºlogo
      */
     public String getLogoUrl() {
         return logoUrl;
     }
 
     /**
-     * ÉèÖÃµêÆÌlogo
+     * è®¾ç½®åº—é“ºlogo
      */
     public void setLogoUrl(String logoUrl) {
         this.logoUrl = logoUrl == null ? null : logoUrl.trim();
     }
 
     /**
-     * »ñÈ¡µêÆÌÃèÊö
+     * è·å–åº—é“ºæè¿°
      */
     public String getDesc() {
         return desc;
     }
 
     /**
-     * ÉèÖÃµêÆÌÃèÊö
+     * è®¾ç½®åº—é“ºæè¿°
      */
     public void setDesc(String desc) {
         this.desc = desc == null ? null : desc.trim();
     }
 
     /**
-     * »ñÈ¡ÊôÓÚÄÇÖÖÀàĞÍµÄĞ¡³Ô
+     * è·å–å±äºé‚£ç§ç±»å‹çš„å°åƒ
      */
     public String getType() {
         return type;
     }
 
     /**
-     * ÉèÖÃÊôÓÚÄÇÖÖÀàĞÍµÄĞ¡³Ô
+     * è®¾ç½®å±äºé‚£ç§ç±»å‹çš„å°åƒ
      */
     public void setType(String type) {
         this.type = type == null ? null : type.trim();
     }
 
     /**
-     * »ñÈ¡µêÆÌµØÖ·
+     * è·å–åº—é“ºåœ°å€
      */
     public String getAddress() {
         return address;
     }
 
     /**
-     * ÉèÖÃµêÆÌµØÖ·
+     * è®¾ç½®åº—é“ºåœ°å€
      */
     public void setAddress(String address) {
         this.address = address == null ? null : address.trim();
     }
 
     /**
-     * »ñÈ¡ÁªÏµµç»°
+     * è·å–è”ç³»ç”µè¯
      */
     public String getPhone() {
         return phone;
     }
 
     /**
-     * ÉèÖÃÁªÏµµç»°
+     * è®¾ç½®è”ç³»ç”µè¯
      */
     public void setPhone(String phone) {
         this.phone = phone == null ? null : phone.trim();
     }
 
     /**
-     * »ñÈ¡´´½¨Ê±¼ä
+     * è·å–åˆ›å»ºæ—¶é—´
      */
     public Date getCreateTime() {
         return createTime;
     }
 
     /**
-     * ÉèÖÃ´´½¨Ê±¼ä
+     * è®¾ç½®åˆ›å»ºæ—¶é—´
      */
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
     /**
-     * »ñÈ¡0:Î´É¾³ı£¬1£ºÉ¾³ı
+     * è·å–0:æœªåˆ é™¤ï¼Œ1ï¼šåˆ é™¤
      */
     public Integer getLogicDelete() {
         return logicDelete;
     }
 
     /**
-     * ÉèÖÃ0:Î´É¾³ı£¬1£ºÉ¾³ı
+     * è®¾ç½®0:æœªåˆ é™¤ï¼Œ1ï¼šåˆ é™¤
      */
     public void setLogicDelete(Integer logicDelete) {
         this.logicDelete = logicDelete;
     }
 
     /**
-     * »ñÈ¡µêÆÌµÄ´´½¨ÓÃ»§
+     * è·å–åº—é“ºçš„åˆ›å»ºç”¨æˆ·
      */
     public String getCreateUser() {
         return createUser;
     }
 
     /**
-     * ÉèÖÃµêÆÌµÄ´´½¨ÓÃ»§
+     * è®¾ç½®åº—é“ºçš„åˆ›å»ºç”¨æˆ·
      */
     public void setCreateUser(String createUser) {
         this.createUser = createUser == null ? null : createUser.trim();

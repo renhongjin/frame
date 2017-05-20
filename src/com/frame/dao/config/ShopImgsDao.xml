@@ -38,9 +38,7 @@
 			<if test="createTime !=null">
 					create_time = #{createTime,jdbcType=TIMESTAMP} and
 			</if>
-			<if test="logicDelete !=null">
-					logic_delete = #{logicDelete,jdbcType=INTEGER} and
-			</if>
+			logic_delete != 1
   		</where>
   	</trim>
   </sql>

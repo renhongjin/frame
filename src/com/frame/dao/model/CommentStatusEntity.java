@@ -6,22 +6,22 @@ public class CommentStatusEntity {
     private String id;
 
     /**
-     * ÓÃ»§id
+     * ç”¨æˆ·id
      */
     private String userId;
 
     /**
-     * ÆÀÂÛid
+     * è¯„è®ºid
      */
     private String commentId;
 
     /**
-     * 1:ÔŞÍ¬£¬0£º·´¶Ô,-1£º¼È²»·´¶ÔÒ²²»ÔŞÍ¬
+     * 1:èµåŒï¼Œ0ï¼šåå¯¹,-1ï¼šæ—¢ä¸åå¯¹ä¹Ÿä¸èµåŒ
      */
     private Integer status;
 
     /**
-     * ´´½¨Ê±¼ä
+     * åˆ›å»ºæ—¶é—´
      */
     private Date createTime;
 
@@ -34,56 +34,56 @@ public class CommentStatusEntity {
     }
 
     /**
-     * »ñÈ¡ÓÃ»§id
+     * è·å–ç”¨æˆ·id
      */
     public String getUserId() {
         return userId;
     }
 
     /**
-     * ÉèÖÃÓÃ»§id
+     * è®¾ç½®ç”¨æˆ·id
      */
     public void setUserId(String userId) {
         this.userId = userId == null ? null : userId.trim();
     }
 
     /**
-     * »ñÈ¡ÆÀÂÛid
+     * è·å–è¯„è®ºid
      */
     public String getCommentId() {
         return commentId;
     }
 
     /**
-     * ÉèÖÃÆÀÂÛid
+     * è®¾ç½®è¯„è®ºid
      */
     public void setCommentId(String commentId) {
         this.commentId = commentId == null ? null : commentId.trim();
     }
 
     /**
-     * »ñÈ¡1:ÔŞÍ¬£¬0£º·´¶Ô,-1£º¼È²»·´¶ÔÒ²²»ÔŞÍ¬
+     * è·å–1:èµåŒï¼Œ0ï¼šåå¯¹,-1ï¼šæ—¢ä¸åå¯¹ä¹Ÿä¸èµåŒ
      */
     public Integer getStatus() {
         return status;
     }
 
     /**
-     * ÉèÖÃ1:ÔŞÍ¬£¬0£º·´¶Ô,-1£º¼È²»·´¶ÔÒ²²»ÔŞÍ¬
+     * è®¾ç½®1:èµåŒï¼Œ0ï¼šåå¯¹,-1ï¼šæ—¢ä¸åå¯¹ä¹Ÿä¸èµåŒ
      */
     public void setStatus(Integer status) {
         this.status = status;
     }
 
     /**
-     * »ñÈ¡´´½¨Ê±¼ä
+     * è·å–åˆ›å»ºæ—¶é—´
      */
     public Date getCreateTime() {
         return createTime;
     }
 
     /**
-     * ÉèÖÃ´´½¨Ê±¼ä
+     * è®¾ç½®åˆ›å»ºæ—¶é—´
      */
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;

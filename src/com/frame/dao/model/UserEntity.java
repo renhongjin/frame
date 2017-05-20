@@ -6,47 +6,47 @@ public class UserEntity {
     private String id;
 
     /**
-     * Î¢ĞÅopenid
+     * å¾®ä¿¡openid
      */
     private String openId;
 
     /**
-     * Î¢ĞÅêÇ³Æ
+     * å¾®ä¿¡æ˜µç§°
      */
     private String nickName;
 
     /**
-     * Î¢ĞÅÍ·ÏñµØÖ·
+     * å¾®ä¿¡å¤´åƒåœ°å€
      */
     private String headUrl;
 
     /**
-     * Î¢ĞÅÓÃ»§ĞÔ±ğ:1:ÄĞ
+     * å¾®ä¿¡ç”¨æˆ·æ€§åˆ«:1:ç”·
      */
     private Integer gender;
 
     /**
-     * ÓïÑÔ
+     * è¯­è¨€
      */
     private String language;
 
     /**
-     * ³ÇÊĞ
+     * åŸå¸‚
      */
     private String city;
 
     /**
-     * Ê¡·İ
+     * çœä»½
      */
     private String province;
 
     /**
-     * ¹ú¼Ò
+     * å›½å®¶
      */
     private String country;
 
     /**
-     * ´´½¨Ê±¼ä
+     * åˆ›å»ºæ—¶é—´
      */
     private Date createTime;
 
@@ -59,126 +59,126 @@ public class UserEntity {
     }
 
     /**
-     * »ñÈ¡Î¢ĞÅopenid
+     * è·å–å¾®ä¿¡openid
      */
     public String getOpenId() {
         return openId;
     }
 
     /**
-     * ÉèÖÃÎ¢ĞÅopenid
+     * è®¾ç½®å¾®ä¿¡openid
      */
     public void setOpenId(String openId) {
         this.openId = openId == null ? null : openId.trim();
     }
 
     /**
-     * »ñÈ¡Î¢ĞÅêÇ³Æ
+     * è·å–å¾®ä¿¡æ˜µç§°
      */
     public String getNickName() {
         return nickName;
     }
 
     /**
-     * ÉèÖÃÎ¢ĞÅêÇ³Æ
+     * è®¾ç½®å¾®ä¿¡æ˜µç§°
      */
     public void setNickName(String nickName) {
         this.nickName = nickName == null ? null : nickName.trim();
     }
 
     /**
-     * »ñÈ¡Î¢ĞÅÍ·ÏñµØÖ·
+     * è·å–å¾®ä¿¡å¤´åƒåœ°å€
      */
     public String getHeadUrl() {
         return headUrl;
     }
 
     /**
-     * ÉèÖÃÎ¢ĞÅÍ·ÏñµØÖ·
+     * è®¾ç½®å¾®ä¿¡å¤´åƒåœ°å€
      */
     public void setHeadUrl(String headUrl) {
         this.headUrl = headUrl == null ? null : headUrl.trim();
     }
 
     /**
-     * »ñÈ¡Î¢ĞÅÓÃ»§ĞÔ±ğ:1:ÄĞ
+     * è·å–å¾®ä¿¡ç”¨æˆ·æ€§åˆ«:1:ç”·
      */
     public Integer getGender() {
         return gender;
     }
 
     /**
-     * ÉèÖÃÎ¢ĞÅÓÃ»§ĞÔ±ğ:1:ÄĞ
+     * è®¾ç½®å¾®ä¿¡ç”¨æˆ·æ€§åˆ«:1:ç”·
      */
     public void setGender(Integer gender) {
         this.gender = gender;
     }
 
     /**
-     * »ñÈ¡ÓïÑÔ
+     * è·å–è¯­è¨€
      */
     public String getLanguage() {
         return language;
     }
 
     /**
-     * ÉèÖÃÓïÑÔ
+     * è®¾ç½®è¯­è¨€
      */
     public void setLanguage(String language) {
         this.language = language == null ? null : language.trim();
     }
 
     /**
-     * »ñÈ¡³ÇÊĞ
+     * è·å–åŸå¸‚
      */
     public String getCity() {
         return city;
     }
 
     /**
-     * ÉèÖÃ³ÇÊĞ
+     * è®¾ç½®åŸå¸‚
      */
     public void setCity(String city) {
         this.city = city == null ? null : city.trim();
     }
 
     /**
-     * »ñÈ¡Ê¡·İ
+     * è·å–çœä»½
      */
     public String getProvince() {
         return province;
     }
 
     /**
-     * ÉèÖÃÊ¡·İ
+     * è®¾ç½®çœä»½
      */
     public void setProvince(String province) {
         this.province = province == null ? null : province.trim();
     }
 
     /**
-     * »ñÈ¡¹ú¼Ò
+     * è·å–å›½å®¶
      */
     public String getCountry() {
         return country;
     }
 
     /**
-     * ÉèÖÃ¹ú¼Ò
+     * è®¾ç½®å›½å®¶
      */
     public void setCountry(String country) {
         this.country = country == null ? null : country.trim();
     }
 
     /**
-     * »ñÈ¡´´½¨Ê±¼ä
+     * è·å–åˆ›å»ºæ—¶é—´
      */
     public Date getCreateTime() {
         return createTime;
     }
 
     /**
-     * ÉèÖÃ´´½¨Ê±¼ä
+     * è®¾ç½®åˆ›å»ºæ—¶é—´
      */
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;

@@ -6,37 +6,37 @@ public class ShopInfoEntity {
     private String id;
 
     /**
-     * µêÆÌid
+     * åº—é“ºid
      */
     private String shopId;
 
     /**
-     * µêÆÌ²é¿´´ÎÊı
+     * åº—é“ºæŸ¥çœ‹æ¬¡æ•°
      */
     private Integer see;
 
     /**
-     * µêÆÌÍÆ¼öÖ¸Êı
+     * åº—é“ºæ¨èæŒ‡æ•°
      */
     private Integer recommend;
 
     /**
-     * µêÆÌµÄÏêÏ¸ÃèÊö
+     * åº—é“ºçš„è¯¦ç»†æè¿°
      */
     private String shopDetaiDesc;
 
     /**
-     * ÃèÊöµÄ´´½¨Ê±¼ä
+     * æè¿°çš„åˆ›å»ºæ—¶é—´
      */
     private Date createTime;
 
     /**
-     * ´´½¨ÈË
+     * åˆ›å»ºäºº
      */
     private String createUser;
 
     /**
-     * 0£ºÎ´É¾³ı£¬1:É¾³ı
+     * 0ï¼šæœªåˆ é™¤ï¼Œ1:åˆ é™¤
      */
     private Integer logicDelete;
 
@@ -49,98 +49,98 @@ public class ShopInfoEntity {
     }
 
     /**
-     * »ñÈ¡µêÆÌid
+     * è·å–åº—é“ºid
      */
     public String getShopId() {
         return shopId;
     }
 
     /**
-     * ÉèÖÃµêÆÌid
+     * è®¾ç½®åº—é“ºid
      */
     public void setShopId(String shopId) {
         this.shopId = shopId == null ? null : shopId.trim();
     }
 
     /**
-     * »ñÈ¡µêÆÌ²é¿´´ÎÊı
+     * è·å–åº—é“ºæŸ¥çœ‹æ¬¡æ•°
      */
     public Integer getSee() {
         return see;
     }
 
     /**
-     * ÉèÖÃµêÆÌ²é¿´´ÎÊı
+     * è®¾ç½®åº—é“ºæŸ¥çœ‹æ¬¡æ•°
      */
     public void setSee(Integer see) {
         this.see = see;
     }
 
     /**
-     * »ñÈ¡µêÆÌÍÆ¼öÖ¸Êı
+     * è·å–åº—é“ºæ¨èæŒ‡æ•°
      */
     public Integer getRecommend() {
         return recommend;
     }
 
     /**
-     * ÉèÖÃµêÆÌÍÆ¼öÖ¸Êı
+     * è®¾ç½®åº—é“ºæ¨èæŒ‡æ•°
      */
     public void setRecommend(Integer recommend) {
         this.recommend = recommend;
     }
 
     /**
-     * »ñÈ¡µêÆÌµÄÏêÏ¸ÃèÊö
+     * è·å–åº—é“ºçš„è¯¦ç»†æè¿°
      */
     public String getShopDetaiDesc() {
         return shopDetaiDesc;
     }
 
     /**
-     * ÉèÖÃµêÆÌµÄÏêÏ¸ÃèÊö
+     * è®¾ç½®åº—é“ºçš„è¯¦ç»†æè¿°
      */
     public void setShopDetaiDesc(String shopDetaiDesc) {
         this.shopDetaiDesc = shopDetaiDesc == null ? null : shopDetaiDesc.trim();
     }
 
     /**
-     * »ñÈ¡ÃèÊöµÄ´´½¨Ê±¼ä
+     * è·å–æè¿°çš„åˆ›å»ºæ—¶é—´
      */
     public Date getCreateTime() {
         return createTime;
     }
 
     /**
-     * ÉèÖÃÃèÊöµÄ´´½¨Ê±¼ä
+     * è®¾ç½®æè¿°çš„åˆ›å»ºæ—¶é—´
      */
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
     /**
-     * »ñÈ¡´´½¨ÈË
+     * è·å–åˆ›å»ºäºº
      */
     public String getCreateUser() {
         return createUser;
     }
 
     /**
-     * ÉèÖÃ´´½¨ÈË
+     * è®¾ç½®åˆ›å»ºäºº
      */
     public void setCreateUser(String createUser) {
         this.createUser = createUser == null ? null : createUser.trim();
     }
 
     /**
-     * »ñÈ¡0£ºÎ´É¾³ı£¬1:É¾³ı
+     * è·å–0ï¼šæœªåˆ é™¤ï¼Œ1:åˆ é™¤
      */
     public Integer getLogicDelete() {
         return logicDelete;
     }
 
     /**
-     * ÉèÖÃ0£ºÎ´É¾³ı£¬1:É¾³ı
+     * è®¾ç½®0ï¼šæœªåˆ é™¤ï¼Œ1:åˆ é™¤
      */
     public void setLogicDelete(Integer logicDelete) {
         this.logicDelete = logicDelete;

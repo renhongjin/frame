@@ -4,152 +4,152 @@ import java.util.Date;
 
 public class ShopImgsEntity {
     /**
-     * Í¼Æ¬id
+     * å›¾ç‰‡id
      */
     private String id;
 
     /**
-     * Í¼Æ¬µÄurlµØÖ·
+     * å›¾ç‰‡çš„urlåœ°å€
      */
     private String url;
 
     /**
-     * Í¼Æ¬µÄÕ¹Ê¾ĞòºÅ
+     * å›¾ç‰‡çš„å±•ç¤ºåºå·
      */
     private Integer sort;
 
     /**
-     * µêÆÌÏêÏ¸ĞÅÏ¢id
+     * åº—é“ºè¯¦ç»†ä¿¡æ¯id
      */
     private String shopInfoId;
 
     /**
-     * ÆÀÂÛid
+     * è¯„è®ºid
      */
     private String commentId;
 
     /**
-     * Í¼Æ¬ÀàĞÍ£º1£ºµêÆÌËµÃ÷£¬2£ºÆÀÂÛÍ¼Æ¬
+     * å›¾ç‰‡ç±»å‹ï¼š1ï¼šåº—é“ºè¯´æ˜ï¼Œ2ï¼šè¯„è®ºå›¾ç‰‡
      */
     private Integer imgType;
 
     /**
-     * ´´½¨Ê±¼ä
+     * åˆ›å»ºæ—¶é—´
      */
     private Date createTime;
 
     /**
-     * Âß¼­É¾³ı×Ö¶Î£º0:Î´É¾³ı£¬1£ºÉ¾³ı
+     * é€»è¾‘åˆ é™¤å­—æ®µï¼š0:æœªåˆ é™¤ï¼Œ1ï¼šåˆ é™¤
      */
     private Integer logicDelete;
 
     /**
-     * »ñÈ¡Í¼Æ¬id
+     * è·å–å›¾ç‰‡id
      */
     public String getId() {
         return id;
     }
 
     /**
-     * ÉèÖÃÍ¼Æ¬id
+     * è®¾ç½®å›¾ç‰‡id
      */
     public void setId(String id) {
         this.id = id == null ? null : id.trim();
     }
 
     /**
-     * »ñÈ¡Í¼Æ¬µÄurlµØÖ·
+     * è·å–å›¾ç‰‡çš„urlåœ°å€
      */
     public String getUrl() {
         return url;
     }
 
     /**
-     * ÉèÖÃÍ¼Æ¬µÄurlµØÖ·
+     * è®¾ç½®å›¾ç‰‡çš„urlåœ°å€
      */
     public void setUrl(String url) {
         this.url = url == null ? null : url.trim();
     }
 
     /**
-     * »ñÈ¡Í¼Æ¬µÄÕ¹Ê¾ĞòºÅ
+     * è·å–å›¾ç‰‡çš„å±•ç¤ºåºå·
      */
     public Integer getSort() {
         return sort;
     }
 
     /**
-     * ÉèÖÃÍ¼Æ¬µÄÕ¹Ê¾ĞòºÅ
+     * è®¾ç½®å›¾ç‰‡çš„å±•ç¤ºåºå·
      */
     public void setSort(Integer sort) {
         this.sort = sort;
     }
 
     /**
-     * »ñÈ¡µêÆÌÏêÏ¸ĞÅÏ¢id
+     * è·å–åº—é“ºè¯¦ç»†ä¿¡æ¯id
      */
     public String getShopInfoId() {
         return shopInfoId;
     }
 
     /**
-     * ÉèÖÃµêÆÌÏêÏ¸ĞÅÏ¢id
+     * è®¾ç½®åº—é“ºè¯¦ç»†ä¿¡æ¯id
      */
     public void setShopInfoId(String shopInfoId) {
         this.shopInfoId = shopInfoId == null ? null : shopInfoId.trim();
     }
 
     /**
-     * »ñÈ¡ÆÀÂÛid
+     * è·å–è¯„è®ºid
      */
     public String getCommentId() {
         return commentId;
     }
 
     /**
-     * ÉèÖÃÆÀÂÛid
+     * è®¾ç½®è¯„è®ºid
      */
     public void setCommentId(String commentId) {
         this.commentId = commentId == null ? null : commentId.trim();
     }
 
     /**
-     * »ñÈ¡Í¼Æ¬ÀàĞÍ£º1£ºµêÆÌËµÃ÷£¬2£ºÆÀÂÛÍ¼Æ¬
+     * è·å–å›¾ç‰‡ç±»å‹ï¼š1ï¼šåº—é“ºè¯´æ˜ï¼Œ2ï¼šè¯„è®ºå›¾ç‰‡
      */
     public Integer getImgType() {
         return imgType;
     }
 
     /**
-     * ÉèÖÃÍ¼Æ¬ÀàĞÍ£º1£ºµêÆÌËµÃ÷£¬2£ºÆÀÂÛÍ¼Æ¬
+     * è®¾ç½®å›¾ç‰‡ç±»å‹ï¼š1ï¼šåº—é“ºè¯´æ˜ï¼Œ2ï¼šè¯„è®ºå›¾ç‰‡
      */
     public void setImgType(Integer imgType) {
         this.imgType = imgType;
     }
 
     /**
-     * »ñÈ¡´´½¨Ê±¼ä
+     * è·å–åˆ›å»ºæ—¶é—´
      */
     public Date getCreateTime() {
         return createTime;
     }
 
     /**
-     * ÉèÖÃ´´½¨Ê±¼ä
+     * è®¾ç½®åˆ›å»ºæ—¶é—´
      */
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
     /**
-     * »ñÈ¡Âß¼­É¾³ı×Ö¶Î£º0:Î´É¾³ı£¬1£ºÉ¾³ı
+     * è·å–é€»è¾‘åˆ é™¤å­—æ®µï¼š0:æœªåˆ é™¤ï¼Œ1ï¼šåˆ é™¤
      */
     public Integer getLogicDelete() {
         return logicDelete;
     }
 
     /**
-     * ÉèÖÃÂß¼­É¾³ı×Ö¶Î£º0:Î´É¾³ı£¬1£ºÉ¾³ı
+     * è®¾ç½®é€»è¾‘åˆ é™¤å­—æ®µï¼š0:æœªåˆ é™¤ï¼Œ1ï¼šåˆ é™¤
      */
     public void setLogicDelete(Integer logicDelete) {
         this.logicDelete = logicDelete;

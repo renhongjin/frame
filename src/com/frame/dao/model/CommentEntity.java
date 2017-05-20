@@ -6,32 +6,32 @@ public class CommentEntity {
     private String id;
 
     /**
-     * µêÆÌid
+     * åº—é“ºid
      */
     private String shopId;
 
     /**
-     * µêÆÌÏêÏ¸ĞÅÏ¢id
+     * åº—é“ºè¯¦ç»†ä¿¡æ¯id
      */
     private String shopInfoId;
 
     /**
-     * ÓÃ»§id
+     * ç”¨æˆ·id
      */
     private String userId;
 
     /**
-     * ÆÀÂÛÄÚÈİ
+     * è¯„è®ºå†…å®¹
      */
     private String content;
 
     /**
-     * ÆÀÂÛÊ±¼ä
+     * è¯„è®ºæ—¶é—´
      */
     private Date commentTime;
 
     /**
-     * Âß¼­É¾³ı×Ö¶Î£º0£ºÎ´É¾³ı£¬1:É¾³ı
+     * é€»è¾‘åˆ é™¤å­—æ®µï¼š0ï¼šæœªåˆ é™¤ï¼Œ1:åˆ é™¤
      */
     private Integer logicDelete;
 
@@ -44,84 +44,84 @@ public class CommentEntity {
     }
 
     /**
-     * »ñÈ¡µêÆÌid
+     * è·å–åº—é“ºid
      */
     public String getShopId() {
         return shopId;
     }
 
     /**
-     * ÉèÖÃµêÆÌid
+     * è®¾ç½®åº—é“ºid
      */
     public void setShopId(String shopId) {
         this.shopId = shopId == null ? null : shopId.trim();
     }
 
     /**
-     * »ñÈ¡µêÆÌÏêÏ¸ĞÅÏ¢id
+     * è·å–åº—é“ºè¯¦ç»†ä¿¡æ¯id
      */
     public String getShopInfoId() {
         return shopInfoId;
     }
 
     /**
-     * ÉèÖÃµêÆÌÏêÏ¸ĞÅÏ¢id
+     * è®¾ç½®åº—é“ºè¯¦ç»†ä¿¡æ¯id
      */
     public void setShopInfoId(String shopInfoId) {
         this.shopInfoId = shopInfoId == null ? null : shopInfoId.trim();
     }
 
     /**
-     * »ñÈ¡ÓÃ»§id
+     * è·å–ç”¨æˆ·id
      */
     public String getUserId() {
         return userId;
     }
 
     /**
-     * ÉèÖÃÓÃ»§id
+     * è®¾ç½®ç”¨æˆ·id
      */
     public void setUserId(String userId) {
         this.userId = userId == null ? null : userId.trim();
     }
 
     /**
-     * »ñÈ¡ÆÀÂÛÄÚÈİ
+     * è·å–è¯„è®ºå†…å®¹
      */
     public String getContent() {
         return content;
     }
 
     /**
-     * ÉèÖÃÆÀÂÛÄÚÈİ
+     * è®¾ç½®è¯„è®ºå†…å®¹
      */
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();
     }
 
     /**
-     * »ñÈ¡ÆÀÂÛÊ±¼ä
+     * è·å–è¯„è®ºæ—¶é—´
      */
     public Date getCommentTime() {
         return commentTime;
     }
 
     /**
-     * ÉèÖÃÆÀÂÛÊ±¼ä
+     * è®¾ç½®è¯„è®ºæ—¶é—´
      */
     public void setCommentTime(Date commentTime) {
         this.commentTime = commentTime;
     }
 
     /**
-     * »ñÈ¡Âß¼­É¾³ı×Ö¶Î£º0£ºÎ´É¾³ı£¬1:É¾³ı
+     * è·å–é€»è¾‘åˆ é™¤å­—æ®µï¼š0ï¼šæœªåˆ é™¤ï¼Œ1:åˆ é™¤
      */
     public Integer getLogicDelete() {
         return logicDelete;
     }
 
     /**
-     * ÉèÖÃÂß¼­É¾³ı×Ö¶Î£º0£ºÎ´É¾³ı£¬1:É¾³ı
+     * è®¾ç½®é€»è¾‘åˆ é™¤å­—æ®µï¼š0ï¼šæœªåˆ é™¤ï¼Œ1:åˆ é™¤
      */
     public void setLogicDelete(Integer logicDelete) {
         this.logicDelete = logicDelete;

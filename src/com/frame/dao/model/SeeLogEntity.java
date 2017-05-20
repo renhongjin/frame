@@ -4,95 +4,95 @@ import java.util.Date;
 
 public class SeeLogEntity {
     /**
-     * 主键id
+     * 涓婚敭id
      */
     private String id;
 
     /**
-     * 查看用户的openId
+     * 鏌ョ湅鐢ㄦ埛鐨刼penId
      */
     private String openId;
 
     /**
-     * 店铺id
+     * 搴楅摵id
      */
     private String shopId;
 
     /**
-     * 店铺详情id
+     * 搴楅摵璇︽儏id
      */
     private String shopInfoId;
 
     /**
-     * 查看时间
+     * 鏌ョ湅鏃堕棿
      */
     private Date seeTime;
 
     /**
-     * 获取主键id
+     * 鑾峰彇涓婚敭id
      */
     public String getId() {
         return id;
     }
 
     /**
-     * 设置主键id
+     * 璁剧疆涓婚敭id
      */
     public void setId(String id) {
         this.id = id == null ? null : id.trim();
     }
 
     /**
-     * 获取查看用户的openId
+     * 鑾峰彇鏌ョ湅鐢ㄦ埛鐨刼penId
      */
     public String getOpenId() {
         return openId;
     }
 
     /**
-     * 设置查看用户的openId
+     * 璁剧疆鏌ョ湅鐢ㄦ埛鐨刼penId
      */
     public void setOpenId(String openId) {
         this.openId = openId == null ? null : openId.trim();
     }
 
     /**
-     * 获取店铺id
+     * 鑾峰彇搴楅摵id
      */
     public String getShopId() {
         return shopId;
     }
 
     /**
-     * 设置店铺id
+     * 璁剧疆搴楅摵id
      */
     public void setShopId(String shopId) {
         this.shopId = shopId == null ? null : shopId.trim();
     }
 
     /**
-     * 获取店铺详情id
+     * 鑾峰彇搴楅摵璇︽儏id
      */
     public String getShopInfoId() {
         return shopInfoId;
     }
 
     /**
-     * 设置店铺详情id
+     * 璁剧疆搴楅摵璇︽儏id
      */
     public void setShopInfoId(String shopInfoId) {
         this.shopInfoId = shopInfoId == null ? null : shopInfoId.trim();
     }
 
     /**
-     * 获取查看时间
+     * 鑾峰彇鏌ョ湅鏃堕棿
      */
     public Date getSeeTime() {
         return seeTime;
     }
 
     /**
-     * 设置查看时间
+     * 璁剧疆鏌ョ湅鏃堕棿
      */
     public void setSeeTime(Date seeTime) {
         this.seeTime = seeTime;
