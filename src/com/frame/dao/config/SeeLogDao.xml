@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.frame.dao.mapper.SeeLogDao" >
+  <resultMap id="BaseResultMap" type="com.frame.dao.model.SeeLogEntity" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="open_id" property="openId" jdbcType="VARCHAR" />
+    <result column="shop_id" property="shopId" jdbcType="VARCHAR" />
+    <result column="shop_info_id" property="shopInfoId" jdbcType="VARCHAR" />
+    <result column="see_time" property="seeTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, open_id, shop_id, shop_info_id, see_time
+  </sql>
+  <sql id="selectByParamsWhere">
+  	<trim suffixOverrides=" and | or">
+  		<where>
+  			<if test="id !=null">
+					id = #{id,jdbcType=VARCHAR} and
+			</if>       
+			<if test="openId !=null">
+					open_id = #{openId,jdbcType=VARCHAR} and
+			</if>
+			<if test="shopId !=null">
+					shop_id = #{shopId,jdbcType=VARCHAR} and
+			</if>
+			<if test="shopInfoId !=null">
+					shop_info_id = #{shopInfoId,jdbcType=VARCHAR} and
+			</if>
+			<if test="seeTime !=null">
+					see_time = #{seeTime,jdbcType=TIMESTAMP} and
+			</if>
+  		</where>
+  	</trim>
+  </sql>
+  
+  <select id="selectByParams" resultMap="BaseResultMap" parameterType="java.util.Map">
+  	select
+		<include refid="Base_Column_List" />
+	from see_log
+		<include refid="selectByParamsWhere" />
+	<if test=" pageIndex != null and pageNum != null">
+			limit ${pageIndex},${pageNum}
+	</if>
+  </select>
+  <select id="selectCountByParams" resultType="java.lang.Integer" parameterType="java.util.Map">
+		select
+		count(id)
+		from see_log
+		<include refid="selectByParamsWhere" />
+  </select>
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from see_log
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from see_log
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.frame.dao.model.SeeLogEntity" >
+    insert into see_log (id, open_id, shop_id, 
+      shop_info_id, see_time)
+    values (#{id,jdbcType=VARCHAR}, #{openId,jdbcType=VARCHAR}, #{shopId,jdbcType=VARCHAR}, 
+      #{shopInfoId,jdbcType=VARCHAR}, #{seeTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.frame.dao.model.SeeLogEntity" >
+    insert into see_log
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="openId != null" >
+        open_id,
+      </if>
+      <if test="shopId != null" >
+        shop_id,
+      </if>
+      <if test="shopInfoId != null" >
+        shop_info_id,
+      </if>
+      <if test="seeTime != null" >
+        see_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="openId != null" >
+        #{openId,jdbcType=VARCHAR},
+      </if>
+      <if test="shopId != null" >
+        #{shopId,jdbcType=VARCHAR},
+      </if>
+      <if test="shopInfoId != null" >
+        #{shopInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="seeTime != null" >
+        #{seeTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.frame.dao.model.SeeLogEntity" >
+    update see_log
+    <set >
+      <if test="openId != null" >
+        open_id = #{openId,jdbcType=VARCHAR},
+      </if>
+      <if test="shopId != null" >
+        shop_id = #{shopId,jdbcType=VARCHAR},
+      </if>
+      <if test="shopInfoId != null" >
+        shop_info_id = #{shopInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="seeTime != null" >
+        see_time = #{seeTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.frame.dao.model.SeeLogEntity" >
+    update see_log
+    set open_id = #{openId,jdbcType=VARCHAR},
+      shop_id = #{shopId,jdbcType=VARCHAR},
+      shop_info_id = #{shopInfoId,jdbcType=VARCHAR},
+      see_time = #{seeTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

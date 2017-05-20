@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.frame.dao.mapper.ShopImgsDao" >
+  <resultMap id="BaseResultMap" type="com.frame.dao.model.ShopImgsEntity" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="url" property="url" jdbcType="VARCHAR" />
+    <result column="sort" property="sort" jdbcType="INTEGER" />
+    <result column="shop_info_id" property="shopInfoId" jdbcType="VARCHAR" />
+    <result column="comment_id" property="commentId" jdbcType="VARCHAR" />
+    <result column="img_type" property="imgType" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="logic_delete" property="logicDelete" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, url, sort, shop_info_id, comment_id, img_type, create_time, logic_delete
+  </sql>
+  <sql id="selectByParamsWhere">
+  	<trim suffixOverrides=" and | or">
+  		<where>
+  			<if test="id !=null">
+					id = #{id,jdbcType=VARCHAR} and
+			</if>       
+			<if test="url !=null">
+					url = #{url,jdbcType=VARCHAR} and
+			</if>
+			<if test="sort !=null">
+					sort = #{sort,jdbcType=INTEGER} and
+			</if>
+			<if test="shopInfoId !=null">
+					shop_info_id = #{shopInfoId,jdbcType=VARCHAR} and
+			</if>
+			<if test="commentId !=null">
+					comment_id = #{commentId,jdbcType=INTEGER} and
+			</if>
+			<if test="imgType !=null">
+					img_type = #{imgType,jdbcType=VARCHAR} and
+			</if>
+			<if test="createTime !=null">
+					create_time = #{createTime,jdbcType=TIMESTAMP} and
+			</if>
+			<if test="logicDelete !=null">
+					logic_delete = #{logicDelete,jdbcType=INTEGER} and
+			</if>
+  		</where>
+  	</trim>
+  </sql>
+  
+  <select id="selectByParams" resultMap="BaseResultMap" parameterType="java.util.Map">
+  	select
+		<include refid="Base_Column_List" />
+	from shop_imgs
+		<include refid="selectByParamsWhere" />
+	order by sort asc
+	<if test=" pageIndex != null and pageNum != null">
+			limit ${pageIndex},${pageNum}
+	</if>
+  </select>
+  <select id="selectCountByParams" resultType="java.lang.Integer" parameterType="java.util.Map">
+		select
+		count(id)
+		from shop_imgs
+		<include refid="selectByParamsWhere" />
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from shop_imgs
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from shop_imgs
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.frame.dao.model.ShopImgsEntity" >
+    insert into shop_imgs (id, url, sort, 
+      shop_info_id, comment_id, img_type, 
+      create_time, logic_delete)
+    values (#{id,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER}, 
+      #{shopInfoId,jdbcType=VARCHAR}, #{commentId,jdbcType=VARCHAR}, #{imgType,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{logicDelete,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.frame.dao.model.ShopImgsEntity" >
+    insert into shop_imgs
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="url != null" >
+        url,
+      </if>
+      <if test="sort != null" >
+        sort,
+      </if>
+      <if test="shopInfoId != null" >
+        shop_info_id,
+      </if>
+      <if test="commentId != null" >
+        comment_id,
+      </if>
+      <if test="imgType != null" >
+        img_type,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="logicDelete != null" >
+        logic_delete,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null" >
+        #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="shopInfoId != null" >
+        #{shopInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="commentId != null" >
+        #{commentId,jdbcType=VARCHAR},
+      </if>
+      <if test="imgType != null" >
+        #{imgType,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="logicDelete != null" >
+        #{logicDelete,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.frame.dao.model.ShopImgsEntity" >
+    update shop_imgs
+    <set >
+      <if test="url != null" >
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null" >
+        sort = #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="shopInfoId != null" >
+        shop_info_id = #{shopInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="commentId != null" >
+        comment_id = #{commentId,jdbcType=VARCHAR},
+      </if>
+      <if test="imgType != null" >
+        img_type = #{imgType,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="logicDelete != null" >
+        logic_delete = #{logicDelete,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.frame.dao.model.ShopImgsEntity" >
+    update shop_imgs
+    set url = #{url,jdbcType=VARCHAR},
+      sort = #{sort,jdbcType=INTEGER},
+      shop_info_id = #{shopInfoId,jdbcType=VARCHAR},
+      comment_id = #{commentId,jdbcType=VARCHAR},
+      img_type = #{imgType,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      logic_delete = #{logicDelete,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
