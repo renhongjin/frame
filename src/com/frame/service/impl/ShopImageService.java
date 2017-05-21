@@ -28,7 +28,7 @@ public class ShopImageService implements IShopImageService{
     params.put("shopInfoId",shopInfoId);
     List<ShopImgsEntity> shopImgsEntitys = shopImgsDao.selectByParams(params);
     List<String> imgs = new ArrayList<String>();
-    if(shopImgsEntitys != null){
+    if(shopImgsEntitys != null && shopImgsEntitys.size() > 0){
       for(ShopImgsEntity shopImgsEntity:shopImgsEntitys){
         imgs.add(shopImgsEntity.getUrl());
       }
@@ -45,7 +45,7 @@ public class ShopImageService implements IShopImageService{
     params.put("commentId",commentId);
     List<ShopImgsEntity> shopImgsEntitys = shopImgsDao.selectByParams(params);
     List<String> imgs = new ArrayList<String>();
-    if(shopImgsEntitys != null){
+    if(shopImgsEntitys != null && shopImgsEntitys.size() > 0){
       for(ShopImgsEntity shopImgsEntity:shopImgsEntitys){
         imgs.add(shopImgsEntity.getUrl());
       }

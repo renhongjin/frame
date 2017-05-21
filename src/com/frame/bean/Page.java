@@ -16,7 +16,7 @@ public class Page implements Serializable{
   /**
    * 第几页默认第一页
    */
-  private Integer pageIndex = 1;
+  private Integer pageIndex = 0;
   /**
    * 每页大小默认15条数据
    */
@@ -25,10 +25,36 @@ public class Page implements Serializable{
   public Page(){
     super();
   }
-  public Page(Integer pageIndex,Integer pageNum){
+  /**
+   * 查询第几页，默认每页15条数据
+   * @param page
+   */
+  public Page(Integer page){
     super();
-    this.pageIndex = pageIndex;
+    if(page.intValue() <= 0 ){
+      page = 1;
+    }
+    if(1 == page.intValue()){
+      this.pageIndex = 0;
+    }else{
+      this.pageIndex = page.intValue() * this.pageNum;
+    }
+  }
+  /**
+   * 指定第几页和每页的大小
+   * @param page
+   * @param pageNum
+   */
+  public Page(Integer page,Integer pageNum){
     this.pageNum = pageNum;
+    if(page.intValue() <= 0 ){
+      page = 1;
+    }
+    if(1 == page.intValue()){
+      this.pageIndex = 0;
+    }else{
+      this.pageIndex = page.intValue() * this.pageNum;
+    }
   }
   public Integer getPageIndex(){
     return pageIndex;

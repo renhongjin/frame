@@ -28,7 +28,14 @@
 	                	<value>text/html;charset=UTF-8</value>
 	                    <value>application/json;charset=UTF-8</value>  
 	                </list>  
-	            </property>  
+	            </property>
+	            <property name="features">
+                    <list>
+                        <value>WriteMapNullValue</value><!-- 是否输出值为null的字段,默认为false -->
+                        <value>QuoteFieldNames</value><!-- 输出key时是否使用双引号,默认为true -->
+                        <value>WriteDateUseDateFormat</value><!-- 全局修改日期格式,默认为false。 -->
+                    </list>
+                </property>  
 	        </bean>  
 	    </mvc:message-converters>  
 	</mvc:annotation-driven>
@@ -72,13 +79,14 @@
     </bean>
 	
      <!-- interceptor setting -->
+  <!--
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/hello/**"/>
             <bean class="com.frame.interceptor.MyInterceptor"></bean>
         </mvc:interceptor>    
         
-        <!-- <mvc:interceptor>
+        <mvc:interceptor>
             <mvc:mapping path="/**"/>
             <bean class="com.frame.interceptor.PermissionInterceptor">
             	<property name="excludedUrls">
@@ -89,6 +97,7 @@
             		</list>
             	</property>
             </bean>
-        </mvc:interceptor> -->    
+        </mvc:interceptor>
     </mvc:interceptors>
+ -->
 </beans>

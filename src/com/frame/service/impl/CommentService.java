@@ -44,7 +44,7 @@ public class CommentService implements ICommentService{
     List<CommentEntity> commentEntitys = commentDao.selectByParams(params);
     List<Comment> commentList = new ArrayList<Comment>();
     
-    if(commentEntitys != null){
+    if(commentEntitys != null && commentList.size() > 0){
       for(CommentEntity commentEntity:commentEntitys){
         String commentId = commentEntity.getId();
         Comment comment = new Comment();

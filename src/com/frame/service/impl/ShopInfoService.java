@@ -64,7 +64,7 @@ public class ShopInfoService implements IShopInfoService{
       List<String> bannerImgs = shopImageService.getShopInfoBannerImgs(shopInfoEntity.getId());
       shopInfo.setImgs(bannerImgs);
       //获取分页评论列表
-      Page page = new Page(0,15);//默认查询第一页前15条评论
+      Page page = new Page(1);//默认查询第一页前15条评论
       List<Comment> commentList = commentService.getCommentList(shopInfoEntity.getId(),page);
       shopInfo.setCommentList(commentList);
     }else{

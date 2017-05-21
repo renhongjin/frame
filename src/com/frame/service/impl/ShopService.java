@@ -1,7 +1,6 @@
 package com.frame.service.impl;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.apache.log4j.Logger;
@@ -48,15 +47,7 @@ public class ShopService implements IShopService{
   }
 
   @Override
-  public List<Shop> getShopList(Map<String,Object> params,Page page){
-    if(params == null){
-      params = new HashMap<String,Object>();
-    }
-    if(page == null){
-      page = new Page();
-    }
-    params.put("pageIndex",page.getPageIndex());
-    params.put("pageNum",page.getPageNum());
+  public List<Shop> getShopList(Map<String,Object> params){
     List<ShopEntity> shopEntitys = shopDao.selectByParams(params);
     List<Shop> shops = new ArrayList<Shop>();
     if(shopEntitys != null && shopEntitys.size() > 0){
@@ -93,5 +84,10 @@ public class ShopService implements IShopService{
     //TODO
     log.info("没有做活动距离逻辑");
     return "未知";
+  }
+
+  @Override
+  public int getShopCount(Map<String,Object> params){
+    return shopDao.selectCountByParams(params);
   }
  }

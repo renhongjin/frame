@@ -2,7 +2,6 @@ package com.frame.service;
 
 import java.util.List;
 import java.util.Map;
-import com.frame.bean.Page;
 import com.frame.bean.Shop;
 
 /**
@@ -20,9 +19,15 @@ public interface IShopService{
   
   /**
    * 条件分页查询店铺列表
-   * @param params ： 店铺条件
-   * @param page
+   * @param params ： 店铺条件 分页参数page:第几页，pageNum：每页大小
    * @return
    */
-  List<Shop> getShopList(Map<String,Object> params,Page page);
+  List<Shop> getShopList(Map<String,Object> params);
+  
+  /**
+   * 获取条件查询的总条数
+   * @param params
+   * @return
+   */
+  int getShopCount(Map<String,Object> params);
 }

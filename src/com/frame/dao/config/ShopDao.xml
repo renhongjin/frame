@@ -16,7 +16,7 @@
     <result column="create_user" property="createUser" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, name, latitude, longitude, logo_url, desc, type, address, phone, create_time, 
+    id, `name`, latitude, longitude, logo_url, `desc`, type, address, phone, create_time, 
     logic_delete, create_user
   </sql>
   
