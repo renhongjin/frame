@@ -14,6 +14,7 @@ import com.frame.bean.User;
 import com.frame.dao.mapper.CommentDao;
 import com.frame.dao.mapper.CommentStatusDao;
 import com.frame.dao.model.CommentEntity;
+import com.frame.dao.model.CommentStatusEntity;
 import com.frame.service.ICommentService;
 @Service
 public class CommentService implements ICommentService{
@@ -44,7 +45,7 @@ public class CommentService implements ICommentService{
     List<CommentEntity> commentEntitys = commentDao.selectByParams(params);
     List<Comment> commentList = new ArrayList<Comment>();
     
-    if(commentEntitys != null && commentList.size() > 0){
+    if(commentEntitys != null && commentEntitys.size() > 0){
       for(CommentEntity commentEntity:commentEntitys){
         String commentId = commentEntity.getId();
         Comment comment = new Comment();
@@ -83,6 +84,36 @@ public class CommentService implements ICommentService{
   public int getCommentCountByShopInfoId(String shopInfoId){
     Map<String,Object> params = new HashMap<String,Object>();
     params.put("shopInfoId",shopInfoId);
-    return commentStatusDao.selectCountByParams(params);
+    return commentDao.selectCountByParams(params);
+  }
+
+  @Override
+  public List<CommentStatusEntity> getCommentStatus(String shopInfoId,String openId){
+    if(shopInfoId == null || openId == null){
+      return null;
+    }
+    Map<String,Object> params = new HashMap<String,Object>();
+    params.put("openId",openId);
+    params.put("shopInfoId",shopInfoId);
+    return commentStatusDao.selectByParams(params);
+  }
+
+  @Override
+  public boolean updateCommentStatus(String openId,String commentId,Integer status){
+    Map<String,Object> params = new HashMap<String,Object>();
+    params.put("openId",openId);
+    params.put("commentId",commentId);
+    List<CommentStatusEntity> commentStatus = commentStatusDao.selectByParams(params);
+    if(commentStatus!=null&&commentStatus.size()==1){
+      String commentStatusId = commentStatus.get(0).getId();
+      CommentStatusEntity commentStatusEntity = new CommentStatusEntity();
+      commentStatusEntity.setId(commentStatusId);
+      commentStatusEntity.setStatus(status);
+      int num = commentStatusDao.updateByPrimaryKeySelective(commentStatusEntity);
+      if(num == 1){
+        return true;
+      }
+    }
+    return false;
   }
  }

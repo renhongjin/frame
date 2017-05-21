@@ -7,7 +7,6 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.frame.bean.Page;
 import com.frame.bean.Shop;
 import com.frame.bean.ShopInfo;
 import com.frame.dao.mapper.ShopDao;

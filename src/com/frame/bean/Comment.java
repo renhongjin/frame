@@ -16,6 +16,10 @@ public class Comment implements Serializable{
    */
   private static final long serialVersionUID = 5418811238356855811L;
   /**
+   * 用户点赞状态1：赞同，0反对，-1既不赞同也不反对
+   */
+  private Integer status = -1;
+  /**
    * 该条评论点赞次数
    */
   private Integer goodNum;
@@ -200,5 +204,15 @@ public class Comment implements Serializable{
   public void setLogicDelete(Integer logicDelete) {
       this.logicDelete = logicDelete;
   }
+
+  public Integer getStatus(){
+    return status;
+  }
+
+  public void setStatus(Integer status){
+    this.status = status;
+  }
+  
+  
 }
 

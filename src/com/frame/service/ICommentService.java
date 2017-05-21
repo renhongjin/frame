@@ -1,8 +1,10 @@
 package com.frame.service;
 
 import java.util.List;
+import org.springframework.web.bind.annotation.RequestParam;
 import com.frame.bean.Comment;
 import com.frame.bean.Page;
+import com.frame.dao.model.CommentStatusEntity;
 
 /**
  * 评论列表
@@ -25,4 +27,20 @@ public interface ICommentService{
    */
   int getCommentCountByShopInfoId(String shopInfoId);
   
+  /**
+   * 根据店铺id与用户openId查询评论状态
+   * @param shopInfoId
+   * @param openId
+   * @return
+   */
+  List<CommentStatusEntity> getCommentStatus(String shopInfoId,String openId);
+  
+  /**
+   * 修改评论的状态，点赞、反对、取消
+   * @param openId 用户openId
+   * @param commentId 评论id
+   * @param status 修改的状态
+   * @return true:修改成功，false修改失败
+   */
+  boolean updateCommentStatus(String openId, String commentId, Integer status);
 }

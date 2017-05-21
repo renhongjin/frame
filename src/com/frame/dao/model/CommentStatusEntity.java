@@ -4,11 +4,14 @@ import java.util.Date;
 
 public class CommentStatusEntity {
     private String id;
-
     /**
-     * 用户id
+     * 店铺详情id
      */
-    private String userId;
+    private String shopInfoId;
+    /**
+     * 微信openId
+     */
+    private String openId;
 
     /**
      * 评论id
@@ -31,20 +34,6 @@ public class CommentStatusEntity {
 
     public void setId(String id) {
         this.id = id == null ? null : id.trim();
-    }
-
-    /**
-     * 获取用户id
-     */
-    public String getUserId() {
-        return userId;
-    }
-
-    /**
-     * 设置用户id
-     */
-    public void setUserId(String userId) {
-        this.userId = userId == null ? null : userId.trim();
     }
 
     /**
@@ -88,4 +77,22 @@ public class CommentStatusEntity {
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
+
+    public String getShopInfoId(){
+      return shopInfoId;
+    }
+
+    public void setShopInfoId(String shopInfoId){
+      this.shopInfoId = shopInfoId;
+    }
+
+    public String getOpenId(){
+      return openId;
+    }
+
+    public void setOpenId(String openId){
+      this.openId = openId;
+    }
+    
+    
 }

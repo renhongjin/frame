@@ -3,13 +3,14 @@
 <mapper namespace="com.frame.dao.mapper.CommentStatusDao" >
   <resultMap id="BaseResultMap" type="com.frame.dao.model.CommentStatusEntity" >
     <id column="id" property="id" jdbcType="VARCHAR" />
-    <result column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="open_id" property="openId" jdbcType="VARCHAR" />
     <result column="comment_id" property="commentId" jdbcType="VARCHAR" />
     <result column="status" property="status" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="shop_info_id" property="shopInfoId" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, user_id, comment_id, status, create_time
+    id, open_id, comment_id, status, create_time
   </sql>
   
   <sql id="selectByParamsWhere">
@@ -18,8 +19,8 @@
   			<if test="id !=null">
 					id = #{id,jdbcType=VARCHAR} and
 			</if>       
-			<if test="userId !=null">
-					user_id = #{userId,jdbcType=VARCHAR} and
+			<if test="openId !=null">
+					open_id = #{openId,jdbcType=VARCHAR} and
 			</if>
 			<if test="commentId !=null">
 					comment_id = #{commentId,jdbcType=VARCHAR} and
@@ -29,6 +30,9 @@
 			</if>
 			<if test="createTime !=null">
 					create_time = #{createTime,jdbcType=TIMESTAMP} and
+			</if>
+			<if test="shopInfoId !=null">
+					shop_info_id = #{shopInfoId,jdbcType=VARCHAR} and
 			</if>
   		</where>
   	</trim>
@@ -61,10 +65,10 @@
     where id = #{id,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.frame.dao.model.CommentStatusEntity" >
-    insert into comment_status (id, user_id, comment_id, 
-      status, create_time)
-    values (#{id,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{commentId,jdbcType=VARCHAR}, 
-      #{status,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP})
+    insert into comment_status (id, open_id, comment_id, 
+      status, create_time,shop_Info_id)
+    values (#{id,jdbcType=VARCHAR}, #{openId,jdbcType=VARCHAR}, #{commentId,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP},#{shopInfoId,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.frame.dao.model.CommentStatusEntity" >
     insert into comment_status
@@ -72,8 +76,8 @@
       <if test="id != null" >
         id,
       </if>
-      <if test="userId != null" >
-        user_id,
+      <if test="openId != null" >
+        open_id,
       </if>
       <if test="commentId != null" >
         comment_id,
@@ -84,13 +88,16 @@
       <if test="createTime != null" >
         create_time,
       </if>
+      <if test="shopInfoId != null" >
+        shop_info_id,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=VARCHAR},
       </if>
-      <if test="userId != null" >
-        #{userId,jdbcType=VARCHAR},
+      <if test="openId != null" >
+        #{openId,jdbcType=VARCHAR},
       </if>
       <if test="commentId != null" >
         #{commentId,jdbcType=VARCHAR},
@@ -101,13 +108,16 @@
       <if test="createTime != null" >
         #{createTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="shopInfoId != null" >
+        #{shopInfoId,jdbcType=VARCHAR},
+      </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.frame.dao.model.CommentStatusEntity" >
     update comment_status
     <set >
-      <if test="userId != null" >
-        user_id = #{userId,jdbcType=VARCHAR},
+      <if test="openId != null" >
+        open_id = #{openId,jdbcType=VARCHAR},
       </if>
       <if test="commentId != null" >
         comment_id = #{commentId,jdbcType=VARCHAR},
@@ -118,15 +128,19 @@
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="shopInfoId != null" >
+        shop_info_id = #{shopInfoId,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.frame.dao.model.CommentStatusEntity" >
     update comment_status
-    set user_id = #{userId,jdbcType=VARCHAR},
+    set open_id = #{openId,jdbcType=VARCHAR},
       comment_id = #{commentId,jdbcType=VARCHAR},
       status = #{status,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=TIMESTAMP}
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      shop_info_id = #{shopInfoId,jdbcType=VARCHAR},
     where id = #{id,jdbcType=VARCHAR}
   </update>
 </mapper>
