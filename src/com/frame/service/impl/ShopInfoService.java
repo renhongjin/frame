@@ -12,6 +12,8 @@ import com.frame.bean.Page;
 import com.frame.bean.ShopInfo;
 import com.frame.dao.mapper.ShopInfoDao;
 import com.frame.dao.model.ShopInfoEntity;
+import com.frame.service.ICommentService;
+import com.frame.service.IShopImageService;
 import com.frame.service.IShopInfoService;
 @Service
 public class ShopInfoService implements IShopInfoService{
@@ -22,10 +24,10 @@ public class ShopInfoService implements IShopInfoService{
   private ShopInfoDao shopInfoDao;
   
   @Autowired
-  private ShopImageService shopImageService;
+  private IShopImageService shopImageService;
   
   @Autowired
-  private CommentService commentService;
+  private ICommentService commentService;
   
   @Override
   public ShopInfo getShopInfoById(String id){

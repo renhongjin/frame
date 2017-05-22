@@ -15,8 +15,9 @@ import com.frame.bean.CommentStatusType;
 import com.frame.bean.Shop;
 import com.frame.bean.common.JsonResult;
 import com.frame.dao.model.CommentStatusEntity;
-import com.frame.service.impl.CommentService;
-import com.frame.service.impl.ShopService;
+import com.frame.service.ICommentService;
+import com.frame.service.IShopSeeInfoService;
+import com.frame.service.IShopService;
 import com.frame.utils.PageUtils;
 
 /**
@@ -31,10 +32,13 @@ public class ShopController{
   private Logger log = Logger.getLogger(ShopController.class);
   
   @Autowired
-  private ShopService shopService;
+  private IShopService shopService;
   
   @Autowired
-  private CommentService commentService;
+  private ICommentService commentService;
+  
+  @Autowired
+  private IShopSeeInfoService shopSeeInfoService; 
   /**
    * 获取店铺列表
    * @return 店铺列表信息
@@ -92,7 +96,8 @@ public class ShopController{
           }
         }
       }
-      
+      //新增一次查看记录
+      shopSeeInfoService.addSeeLog(openId,shopId,shop.getShopInfo().getId());
       result.setData(shop);
       result.setStatus(0);
       result.setMsg("success");

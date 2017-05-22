@@ -12,21 +12,24 @@ import com.frame.bean.ShopInfo;
 import com.frame.dao.mapper.ShopDao;
 import com.frame.dao.model.ShopEntity;
 import com.frame.dao.model.ShopInfoEntity;
+import com.frame.service.ICommentService;
+import com.frame.service.IShopInfoService;
+import com.frame.service.IShopSeeInfoService;
 import com.frame.service.IShopService;
 @Service
 public class ShopService implements IShopService{
   private Logger log = Logger.getLogger(ShopService.class);
   
   @Autowired
-  private ShopInfoService shopInfoService;
+  private IShopInfoService shopInfoService;
   
   @Autowired
   private ShopDao shopDao;
   
   @Autowired
-  private CommentService commentService;
+  private ICommentService commentService;
   @Autowired
-  private ShopSeeInfoService shopSeeInfoService;
+  private IShopSeeInfoService shopSeeInfoService;
   
   @Override
   public Shop getShopAllInfoById(String shopId){

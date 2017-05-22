@@ -16,6 +16,8 @@ import com.frame.dao.mapper.CommentStatusDao;
 import com.frame.dao.model.CommentEntity;
 import com.frame.dao.model.CommentStatusEntity;
 import com.frame.service.ICommentService;
+import com.frame.service.IShopImageService;
+import com.frame.service.IUserService;
 @Service
 public class CommentService implements ICommentService{
 
@@ -27,10 +29,10 @@ public class CommentService implements ICommentService{
   private CommentStatusDao commentStatusDao;
   
   @Autowired
-  private ShopImageService shopImageService; 
+  private IShopImageService shopImageService; 
   
   @Autowired
-  private UserService userService;
+  private IUserService userService;
   
   @Override
   public List<Comment> getCommentList(String shopInfoId,Page page){

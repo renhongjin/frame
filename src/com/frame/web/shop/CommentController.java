@@ -14,7 +14,7 @@ import com.frame.bean.CommentStatusType;
 import com.frame.bean.Page;
 import com.frame.bean.common.JsonResult;
 import com.frame.dao.model.CommentStatusEntity;
-import com.frame.service.impl.CommentService;
+import com.frame.service.ICommentService;
 import com.frame.web.model.CommentListModel;
 /**
  * 评论列表
@@ -32,7 +32,7 @@ public class CommentController{
   private Logger log = Logger.getLogger(CommentController.class);
   
   @Autowired
-  private CommentService commentService;
+  private ICommentService commentService;
   
   /**
    * 分页获取评论列表

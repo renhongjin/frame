@@ -1,6 +1,7 @@
 package com.frame.service.impl;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,6 +12,7 @@ import com.frame.bean.User;
 import com.frame.dao.mapper.UserDao;
 import com.frame.dao.model.UserEntity;
 import com.frame.service.IUserService;
+import com.frame.utils.UUIDUtils;
 @Service
 public class UserService implements IUserService{
 
@@ -45,6 +47,8 @@ public class UserService implements IUserService{
 
   @Override
   public int addUser(User user){
+    user.setId(UUIDUtils.nextUUID());
+    user.setCreateTime(new Date());
     UserEntity userEntity = new UserEntity();
     BeanUtils.copyProperties(user,userEntity); 
     return userDao.insert(userEntity);
