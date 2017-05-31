@@ -1,4 +1,4 @@
-package com.frame.bean;
+package com.frame.bean.constant;
 /**
  * 评论类型
  * @author lenovo

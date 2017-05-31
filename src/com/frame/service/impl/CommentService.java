@@ -1,6 +1,7 @@
 package com.frame.service.impl;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -8,9 +9,10 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.frame.bean.Comment;
-import com.frame.bean.CommentStatusType;
 import com.frame.bean.Page;
 import com.frame.bean.User;
+import com.frame.bean.constant.CommentStatusType;
+import com.frame.bean.constant.LogicDelete;
 import com.frame.dao.mapper.CommentDao;
 import com.frame.dao.mapper.CommentStatusDao;
 import com.frame.dao.model.CommentEntity;
@@ -18,6 +20,7 @@ import com.frame.dao.model.CommentStatusEntity;
 import com.frame.service.ICommentService;
 import com.frame.service.IShopImageService;
 import com.frame.service.IUserService;
+import com.frame.utils.UUIDUtils;
 @Service
 public class CommentService implements ICommentService{
 
@@ -115,7 +118,41 @@ public class CommentService implements ICommentService{
       if(num == 1){
         return true;
       }
+    }else if(commentStatus.size() == 0){
+      CommentEntity commentEntity = commentDao.selectByPrimaryKey(commentId);
+      if(commentEntity != null){
+        CommentStatusEntity record = new CommentStatusEntity();
+        record.setCommentId(commentId);
+        record.setCreateTime(new Date());
+        record.setId(UUIDUtils.nextUUID());
+        record.setOpenId(openId);
+        record.setStatus(status);
+        record.setShopInfoId(commentEntity.getShopInfoId());
+        commentStatusDao.insert(record);
+      }
     }
     return false;
+  }
+
+  @Override
+  public boolean addComment(Comment comment){
+    if(comment == null){
+      return false;
+    }
+    CommentEntity commentEntity = new CommentEntity();
+    String commentId = UUIDUtils.nextUUID();
+    commentEntity.setId(commentId);
+    commentEntity.setCommentTime(new Date());
+    commentEntity.setLogicDelete(LogicDelete.FLAG_NOT_DELETE);
+    commentEntity.setContent(comment.getContent());
+    commentEntity.setShopId(comment.getShopId());
+    commentEntity.setShopInfoId(comment.getShopInfoId());
+    commentEntity.setUserId(comment.getUserId());
+    int num = commentDao.insert(commentEntity);
+    
+    //评论的图片写入
+    List<String> commentImgUrls = comment.getImgs();
+    shopImageService.addCommentImgs(commentImgUrls,commentId);
+    return 1 == num ? true : false;
   }
  }

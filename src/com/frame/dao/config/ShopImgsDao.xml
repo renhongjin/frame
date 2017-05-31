@@ -69,6 +69,19 @@
     delete from shop_imgs
     where id = #{id,jdbcType=VARCHAR}
   </delete>
+  
+  <insert id="batchInsert" parameterType="java.util.List" >
+    insert into shop_imgs (id, url, sort, 
+      shop_info_id, comment_id, img_type, 
+      create_time, logic_delete)
+    values 
+     <foreach collection="list" item="item" index="index" separator="," >
+     (#{id,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER}, 
+      #{shopInfoId,jdbcType=VARCHAR}, #{commentId,jdbcType=VARCHAR}, #{imgType,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{logicDelete,jdbcType=INTEGER})
+     </foreach>
+  </insert>
+  
   <insert id="insert" parameterType="com.frame.dao.model.ShopImgsEntity" >
     insert into shop_imgs (id, url, sort, 
       shop_info_id, comment_id, img_type, 

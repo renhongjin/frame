@@ -1,7 +1,6 @@
 package com.frame.service;
 
 import java.util.List;
-import org.springframework.web.bind.annotation.RequestParam;
 import com.frame.bean.Comment;
 import com.frame.bean.Page;
 import com.frame.dao.model.CommentStatusEntity;
@@ -43,4 +42,11 @@ public interface ICommentService{
    * @return true:修改成功，false修改失败
    */
   boolean updateCommentStatus(String openId, String commentId, Integer status);
+  
+  /**
+   * 新增评论
+   * @param comment
+   * @return
+   */
+  boolean addComment(Comment comment);
 }

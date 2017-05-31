@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.alibaba.fastjson.JSON;
 import com.frame.bean.Comment;
-import com.frame.bean.CommentStatusType;
 import com.frame.bean.Page;
 import com.frame.bean.common.JsonResult;
+import com.frame.bean.constant.CommentStatusType;
 import com.frame.dao.model.CommentStatusEntity;
 import com.frame.service.ICommentService;
+import com.frame.service.IUserService;
 import com.frame.web.model.CommentListModel;
 /**
  * 评论列表
@@ -33,7 +34,8 @@ public class CommentController{
   
   @Autowired
   private ICommentService commentService;
-  
+  @Autowired
+  private IUserService userService;
   /**
    * 分页获取评论列表
    * @return
@@ -107,6 +109,25 @@ public class CommentController{
       result.setStatus(0);
     }catch(Exception e){
       log.error("修改评论的状态异常",e);
+      result.setStatus(1);
+      result.setMsg("系统异常");
+    }
+    return result;
+  }
+  
+  @RequestMapping("/add.html")
+  @ResponseBody
+  public JsonResult<Boolean> addComment(@RequestBody Comment comment){
+    log.info("新增评论入参：comment="+JSON.toJSONString(comment));
+    JsonResult<Boolean> result = new JsonResult<Boolean>();
+    try{
+      Boolean flag = Boolean.TRUE;
+      flag = commentService.addComment(comment);
+      result.setData(flag);
+      result.setMsg("success");
+      result.setStatus(0);
+    }catch(Exception e){
+      log.error("新增评论异常",e);
       result.setStatus(1);
       result.setMsg("系统异常");
     }

@@ -20,4 +20,11 @@ public interface ShopImgsDao {
     List<ShopImgsEntity> selectByParams(Map<String,Object> params);
     
     int selectCountByParams(Map<String,Object> params);
+    
+    /**
+     * 批量插入
+     * @param records
+     * @return
+     */
+    int batchInsert(List<ShopImgsEntity> records);
 }

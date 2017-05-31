@@ -1,4 +1,4 @@
-package com.frame.bean;
+package com.frame.bean.constant;
 /**
  * 图片类型常量
  * @author lenovo

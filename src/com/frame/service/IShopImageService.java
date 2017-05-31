@@ -16,4 +16,20 @@ public interface IShopImageService{
    * @return
    */
   List<String> getCommentImgs(String commentId);
+  
+  /**
+   * 插入评论图片
+   * @param imgUrls
+   * @param commentId
+   * @return
+   */
+  int addCommentImgs(List<String> imgUrls,String commentId);
+  
+  /**
+   * 插入店铺详细信息中的图片id
+   * @param imgUrls
+   * @param shopInfoId
+   * @return
+   */
+  int addShopInfoImgs(List<String> imgUrls,String shopInfoId);
 }
