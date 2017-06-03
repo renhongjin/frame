@@ -28,9 +28,9 @@ public interface IUserService{
   /**
    * 新增用户
    * @param user
-   * @return
+   * @return 用户id
    */
-  int addUser(User user);
+  String addUser(User user);
   
   /**
    * 批量查询用户

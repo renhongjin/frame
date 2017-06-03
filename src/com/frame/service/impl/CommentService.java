@@ -152,7 +152,9 @@ public class CommentService implements ICommentService{
     
     //评论的图片写入
     List<String> commentImgUrls = comment.getImgs();
-    shopImageService.addCommentImgs(commentImgUrls,commentId);
+    if(commentImgUrls != null && commentImgUrls.size() > 0){
+      shopImageService.addCommentImgs(commentImgUrls,commentId);
+    }
     return 1 == num ? true : false;
   }
  }

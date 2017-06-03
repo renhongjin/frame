@@ -46,12 +46,14 @@ public class UserService implements IUserService{
   }
 
   @Override
-  public int addUser(User user){
-    user.setId(UUIDUtils.nextUUID());
+  public String addUser(User user){
+    String userId = UUIDUtils.nextUUID();
+    user.setId(userId);
     user.setCreateTime(new Date());
     UserEntity userEntity = new UserEntity();
-    BeanUtils.copyProperties(user,userEntity); 
-    return userDao.insert(userEntity);
+    BeanUtils.copyProperties(user,userEntity);
+    userDao.insert(userEntity);
+    return userId;
   }
 
   @Override
