@@ -25,11 +25,11 @@ import com.frame.web.shop.ShopController;
 public class IndexController {
   private Logger log = Logger.getLogger(ShopController.class);
 
-  @Value("${upload.windows.path}")
+  @Value("${upload.linux.path}")
   private String uploadPath;
   
   @ResponseBody
-  @RequestMapping("/uploadImg") 
+  @RequestMapping("/uploadImg")
   public JsonResult<List<String>> upload(HttpServletRequest request,HttpServletResponse response,HttpSession session) throws IllegalStateException, IOException{
     JsonResult<List<String>> result = new JsonResult<List<String>>();
     List<String> urls = new ArrayList<String>();

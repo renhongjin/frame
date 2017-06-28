@@ -1,0 +1,44 @@
+@charset "utf-8";
+/*初始化样式*/
+html{height:100%;}
+body{background-color: #EAEAEA;margin: 0;height:100%;padding: 0;color: #444;font-family: Arial, "微软雅黑", "宋体" !important;font-size: 16px;}
+label{display: inline-block;width: 140px;text-align: left;}
+button{font-family: Arial, "微软雅黑", "宋体" !important;}
+ul{margin: 0;padding: 0;}
+li{list-style-type: none;padding-top: 10px;}
+i{display: inline-block;}
+input{
+    font-family: Arial, "微软雅黑", "宋体" !important;
+    width: 200px;
+    height: 30px;
+    padding-left: 10px ;
+    border: 3px solid #fff;
+}
+textarea{
+    font-family: Arial, "微软雅黑", "宋体" !important;
+    width: 206px;
+    height: 80px;
+    border: 3px solid #fff;
+    vertical-align: top
+}
+input:focus,textarea:focus{
+    border: 3px solid #e9f3f8;
+    outline: none;
+}
+/*店铺类型样式*/
+.shopTopeStyle {
+    display: inline-block;
+    width: 120px;
+    text-align: center;
+    background-color: #00aae7;
+    margin-right: 10px;
+}
+
+#picNew {
+    width: 120px;
+    height: 120px;
+    background: url(../images/a11.png) no-repeat;
+    margin: 20px auto;
+    cursor: pointer;
+    background-position: 54% 44%;
+}

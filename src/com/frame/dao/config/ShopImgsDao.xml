@@ -76,9 +76,9 @@
       create_time, logic_delete)
     values 
      <foreach collection="list" item="item" index="index" separator="," >
-     (#{id,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER}, 
-      #{shopInfoId,jdbcType=VARCHAR}, #{commentId,jdbcType=VARCHAR}, #{imgType,jdbcType=INTEGER}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{logicDelete,jdbcType=INTEGER})
+     (#{item.id,jdbcType=VARCHAR}, #{item.url,jdbcType=VARCHAR}, #{item.sort,jdbcType=INTEGER}, 
+      #{item.shopInfoId,jdbcType=VARCHAR}, #{item.commentId,jdbcType=VARCHAR}, #{item.imgType,jdbcType=INTEGER}, 
+      #{item.createTime,jdbcType=TIMESTAMP}, #{item.logicDelete,jdbcType=INTEGER})
      </foreach>
   </insert>
   

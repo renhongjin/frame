@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>吃啥子哟</title>
+    <link href="css/index.css" rel="stylesheet"/>
+    <link href="css/kindeditor.css" rel="stylesheet"/>
+    <link rel="Shortcut Icon" href="images/logo.png" type="image/x-icon">
+    <script src="js/jquery.min.js"></script>
+    <!--<script src="js/futextarea.js"></script>-->
+    <script src="js/kindeditor-min.js"></script>
+    <script src="js/zh-CN.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/ajaxfileupload.js"></script>
+    <script>
+        var editor;
+        KindEditor.ready(function(K) {
+            editor = K.create('textarea[name="content"]', {
+                resizeType : 1,
+                allowPreviewEmoticons : false,
+                allowImageUpload : false,
+                items : [
+                    'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+                    'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+                    'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+            });
+        });
+    </script>
+</head>
+<body>
+<form action="">
+    <ul>
+        <li>
+        	<label for="">店铺名称：</label>
+        	<input>
+        </li>
+        <li>
+        	<label for="">店铺地址：</label>
+        	<input>
+        </li>
+        <li>
+        	<label for="">店铺经度：</label>
+        	<input>
+        </li>
+        <li>
+        	<label for="">店铺纬度：</label>
+        	<input>
+        </li>
+        <li>
+        	<label for="">联系电话：</label>
+        	<input>
+        </li>
+        <li>
+        	<label for="">推荐指数：</label>
+        	<input placeholder="输入数字（1-5)" maxlength="5" minlength="1">
+        </li>
+        <li>
+        	<label for="">店铺类型：</label>
+        	<input id="shopTope">
+        </li>
+        <li>
+        	<div class="showTope"></div>
+        </li>
+        <li>
+        	<label>店铺主要介绍：</label>
+        	<textarea maxlength="200"></textarea>
+        </li>
+        <li>
+            <label for="">店铺logo：</label>
+            <img id="picNew" class="uploadimg" src="" onclick="upload()"> <input id="fileNew" name="file" accept="image/jpg,image/jpeg,image/png,image/bmp" type="file" style="display: none" />
+        </li>
+        <li>
+        	<label for="">店铺banner图片：</label>
+        	<input>
+        </li>
+        <li>
+        	<label for="">店铺详细介绍：</label>
+        	<textarea name="content">KindEditor</textarea>
+        </li>
+        <li>
+        	<input type="submit" value="提交">
+        </li>
+    </ul>
+</form>
+
+
+</body>
+</html>
